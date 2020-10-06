@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Where's Some Water - Dashboard</title>
+        <%- include('../partials/head'); %>
+    </head>
+    <body class="container">
+        <header>
+            <%- include('../partials/navbar'); %>
+        </header>
+        <main>
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="/WaterMap.png" width="100%" />
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="card-title">Welcome!</h1>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Your Nearest Water Source</h5>
+                                <br />
+                                <h6 class="card-subtitle mb-2">Town Name</h6>
+                                <p class="card-text">0.7 Miles South South East</p>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Location Information</h5>
+                                <br />
+                                <h6 class="card-subtitle mb-2">Town Name</h6>
+                                <p class="card-text">Population: 4,200<br/>Needed Daily: 9000 Liters</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <img src="/user.png" height="100px" />
+                            <h5 class="card-title">Hello user!</h5>
+                            <br />
+                            <h6 class="card-subtitle mb-2">Resident of Town Name</h6>
+                            <p class="card-text">Verified<br/>Requesting: 3 Litters per Day</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

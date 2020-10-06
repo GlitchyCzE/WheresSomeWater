@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Where's Some Water - Home</title>
+        <%- include('../partials/head'); %>
+    </head>
+    <body class="container">
+        <header>
+            <%- include('../partials/navbar'); %>
+        </header>
+        <main>
+            <form action="#">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location">
+                </div>
+                <div class="form-group">
+                    <label for="population">Town Population</label>
+                    <input type="text" class="form-control" id="population">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" rows="5" id="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="files">Upload File(s)</label>
+                    <input type="file" class="form-control-file" id="files" multiple>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </main>
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>
