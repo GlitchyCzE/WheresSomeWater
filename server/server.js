@@ -26,16 +26,16 @@ app.use(session({
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
-   if (req.session.isSet === undefined) {
-       req.session.isLoggedIn = false;
-       req.session.isSet = true;
-   }
+    if (req.session.isSet === undefined) {
+        req.session.isLoggedIn = false;
+        req.session.isSet = true;
+    }
     next();
 });
 
 // Begin Routes
 app.get("/", (req, res) => {
-   res.redirect("/home");
+    res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
@@ -104,7 +104,6 @@ app.get("/logout", (req, res) => {
     req.session.destroy();
     res.redirect("/home");
 });
-
 
 app.listen(port, listenAddress, () => {
     console.log(`Application listening on ${listenAddress}:${port}`);
