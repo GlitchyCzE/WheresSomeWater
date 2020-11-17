@@ -58,7 +58,16 @@ app.get("/signup", (req, res) => {
     res.render('pages/signup', req.session);
 });
 
+app.get('/requires_login', (req, res) => {
+    res.set('Cache-control', `no-store`);
+    res.render('pages/requires_login', req.session);
+})
+
 app.get("/dashboard", (req, res) => {
+    if (!req.session.isLoggedIn) {
+        res.redirect("/requires_login");
+        return;
+    }
     res.set('Cache-control', `no-store`);
     res.render('pages/dashboard', req.session);
 });
@@ -74,21 +83,37 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/map", (req, res) => {
+    if (!req.session.isLoggedIn) {
+        res.redirect("/requires_login");
+        return;
+    }
     res.set('Cache-control', `no-store`);
     res.render('pages/map', req.session);
 });
 
 app.get("/request", (req, res) => {
+    if (!req.session.isLoggedIn) {
+        res.redirect("/requires_login");
+        return;
+    }
     res.set('Cache-control', `no-store`);
     res.render('pages/request', req.session);
 });
 
 app.get("/supply", (req, res) => {
+    if (!req.session.isLoggedIn) {
+        res.redirect("/requires_login");
+        return;
+    }
     res.set('Cache-control', `no-store`);
     res.render('pages/supply', req.session);
 });
 
 app.get("/report", (req, res) => {
+    if (!req.session.isLoggedIn) {
+        res.redirect("/requires_login");
+        return;
+    }
     res.set('Cache-control', `no-store`);
     res.render('pages/report', req.session);
 });
