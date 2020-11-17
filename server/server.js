@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
 
 // Create application
-app.use(morgan(':remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
+app.use(morgan(':remote-addr :req[x-forwarded-for] :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
 
 // Set session usage to track account logins
 app.use(session({
