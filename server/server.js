@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const ash = require('express-async-handler');
+const morgan = require('morgan');
 const path = require('path');
 
 // Express Application
@@ -14,6 +15,9 @@ const port = 3000;
 // Set view engine to ejs for template rendering
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
+
+// Create application
+app.use(morgan(':remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
 
 // Set session usage to track account logins
 app.use(session({
