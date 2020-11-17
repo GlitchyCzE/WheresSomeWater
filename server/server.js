@@ -48,6 +48,11 @@ app.get("/login", (req, res) => {
     res.render('pages/login', req.session);
 });
 
+app.get("/forgot", (req, res) => {
+    res.set('Cache-control', `no-store`);
+    res.render('pages/forgot', req.session);
+});
+
 app.get("/signup", (req, res) => {
     res.set('Cache-control', `no-store`);
     res.render('pages/signup', req.session);
@@ -65,7 +70,7 @@ app.get("/contact", (req, res) => {
 
 app.get("/about", (req, res) => {
     res.set('Cache-control', 'no-store');
-    res.render('pages/about');
+    res.render('pages/about', req.session);
 });
 
 app.get("/map", (req, res) => {
