@@ -30,6 +30,7 @@ app.use((req, res, next) => {
         req.session.isLoggedIn = false;
         req.session.isSet = true;
     }
+    res.header("Access-Control-Allow-Origin", "*");
     next();
 });
 
